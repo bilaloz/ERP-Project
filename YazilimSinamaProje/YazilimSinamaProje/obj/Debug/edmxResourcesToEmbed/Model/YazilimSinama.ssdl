@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="yazilim_sinama_projesiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="atik">
+    <Key>
+      <PropertyRef Name="atikID" />
+    </Key>
+    <Property Name="atikID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="atikAdi" Type="nvarchar" MaxLength="50" />
+    <Property Name="urunID" Type="int" />
+    <Property Name="kullaniciID" Type="int" />
+  </EntityType>
+  <EntityType Name="bolum">
+    <Key>
+      <PropertyRef Name="bolumID" />
+    </Key>
+    <Property Name="bolumID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bolumAdi" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="kullanici">
+    <Key>
+      <PropertyRef Name="kullaniciID" />
+    </Key>
+    <Property Name="kullaniciID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kullaniciAdi" Type="nvarchar" MaxLength="50" />
+    <Property Name="kullaniciSifre" Type="nvarchar" MaxLength="50" />
+    <Property Name="kullaniciTipi" Type="nvarchar" MaxLength="50" />
+    <Property Name="bolumID" Type="int" />
+  </EntityType>
+  <EntityType Name="rapor">
+    <Key>
+      <PropertyRef Name="raporID" />
+    </Key>
+    <Property Name="raporID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="aciklama" Type="text" />
+    <Property Name="kullaniciID" Type="int" />
+    <Property Name="urunID" Type="int" />
+    <Property Name="bolumID" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="urunSatinAlma">
+    <Key>
+      <PropertyRef Name="urunID" />
+    </Key>
+    <Property Name="urunID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="urunAd" Type="nvarchar" MaxLength="50" />
+    <Property Name="urunAdedi" Type="int" />
+    <Property Name="satinAlinanFirma" Type="nvarchar" MaxLength="50" />
+    <Property Name="urunTipi" Type="nvarchar" MaxLength="50" />
+    <Property Name="satinAlmaTarihi" Type="datetime" />
+    <Property Name="urunFiyat" Type="money" />
+    <Property Name="urunToptanFiyat" Type="money" />
+  </EntityType>
+  <EntityType Name="zimmet">
+    <Key>
+      <PropertyRef Name="zimmetID" />
+    </Key>
+    <Property Name="zimmetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="zimmet" Type="nvarchar" MaxLength="50" />
+    <Property Name="kullaniciID" Type="int" />
+    <Property Name="urunID" Type="int" />
+  </EntityType>
+  <Association Name="FK_atik_kullanici">
+    <End Role="kullanici" Type="Self.kullanici" Multiplicity="0..1" />
+    <End Role="atik" Type="Self.atik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kullanici">
+        <PropertyRef Name="kullaniciID" />
+      </Principal>
+      <Dependent Role="atik">
+        <PropertyRef Name="kullaniciID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_atik_urunSatinAlma">
+    <End Role="urunSatinAlma" Type="Self.urunSatinAlma" Multiplicity="0..1" />
+    <End Role="atik" Type="Self.atik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="urunSatinAlma">
+        <PropertyRef Name="urunID" />
+      </Principal>
+      <Dependent Role="atik">
+        <PropertyRef Name="urunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_kullanici_bolum">
+    <End Role="bolum" Type="Self.bolum" Multiplicity="0..1" />
+    <End Role="kullanici" Type="Self.kullanici" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bolum">
+        <PropertyRef Name="bolumID" />
+      </Principal>
+      <Dependent Role="kullanici">
+        <PropertyRef Name="bolumID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_rapor_bolum">
+    <End Role="bolum" Type="Self.bolum" Multiplicity="0..1" />
+    <End Role="rapor" Type="Self.rapor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bolum">
+        <PropertyRef Name="bolumID" />
+      </Principal>
+      <Dependent Role="rapor">
+        <PropertyRef Name="bolumID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_rapor_kullanici">
+    <End Role="kullanici" Type="Self.kullanici" Multiplicity="0..1" />
+    <End Role="rapor" Type="Self.rapor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kullanici">
+        <PropertyRef Name="kullaniciID" />
+      </Principal>
+      <Dependent Role="rapor">
+        <PropertyRef Name="kullaniciID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_rapor_urunSatinAlma">
+    <End Role="urunSatinAlma" Type="Self.urunSatinAlma" Multiplicity="0..1" />
+    <End Role="rapor" Type="Self.rapor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="urunSatinAlma">
+        <PropertyRef Name="urunID" />
+      </Principal>
+      <Dependent Role="rapor">
+        <PropertyRef Name="urunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_zimmet_kullanici">
+    <End Role="kullanici" Type="Self.kullanici" Multiplicity="0..1" />
+    <End Role="zimmet" Type="Self.zimmet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kullanici">
+        <PropertyRef Name="kullaniciID" />
+      </Principal>
+      <Dependent Role="zimmet">
+        <PropertyRef Name="kullaniciID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_zimmet_urunSatinAlma">
+    <End Role="urunSatinAlma" Type="Self.urunSatinAlma" Multiplicity="0..1" />
+    <End Role="zimmet" Type="Self.zimmet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="urunSatinAlma">
+        <PropertyRef Name="urunID" />
+      </Principal>
+      <Dependent Role="zimmet">
+        <PropertyRef Name="urunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="yazilim_sinama_projesiModelStoreContainer">
+    <EntitySet Name="atik" EntityType="Self.atik" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="bolum" EntityType="Self.bolum" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kullanici" EntityType="Self.kullanici" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rapor" EntityType="Self.rapor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="urunSatinAlma" EntityType="Self.urunSatinAlma" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="zimmet" EntityType="Self.zimmet" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_atik_kullanici" Association="Self.FK_atik_kullanici">
+      <End Role="kullanici" EntitySet="kullanici" />
+      <End Role="atik" EntitySet="atik" />
+    </AssociationSet>
+    <AssociationSet Name="FK_atik_urunSatinAlma" Association="Self.FK_atik_urunSatinAlma">
+      <End Role="urunSatinAlma" EntitySet="urunSatinAlma" />
+      <End Role="atik" EntitySet="atik" />
+    </AssociationSet>
+    <AssociationSet Name="FK_kullanici_bolum" Association="Self.FK_kullanici_bolum">
+      <End Role="bolum" EntitySet="bolum" />
+      <End Role="kullanici" EntitySet="kullanici" />
+    </AssociationSet>
+    <AssociationSet Name="FK_rapor_bolum" Association="Self.FK_rapor_bolum">
+      <End Role="bolum" EntitySet="bolum" />
+      <End Role="rapor" EntitySet="rapor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_rapor_kullanici" Association="Self.FK_rapor_kullanici">
+      <End Role="kullanici" EntitySet="kullanici" />
+      <End Role="rapor" EntitySet="rapor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_rapor_urunSatinAlma" Association="Self.FK_rapor_urunSatinAlma">
+      <End Role="urunSatinAlma" EntitySet="urunSatinAlma" />
+      <End Role="rapor" EntitySet="rapor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_zimmet_kullanici" Association="Self.FK_zimmet_kullanici">
+      <End Role="kullanici" EntitySet="kullanici" />
+      <End Role="zimmet" EntitySet="zimmet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_zimmet_urunSatinAlma" Association="Self.FK_zimmet_urunSatinAlma">
+      <End Role="urunSatinAlma" EntitySet="urunSatinAlma" />
+      <End Role="zimmet" EntitySet="zimmet" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

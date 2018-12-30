@@ -1,0 +1,493 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EAF28A83-925B-48FC-A355-2CE32587626B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YazilimSinamaProje</RootNamespace>
+    <AssemblyName>YazilimSinamaProje</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v18.2.Core, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dashboard.v18.2.Core, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dashboard.v18.2.Win, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v18.2.UI, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Map.v18.2.Core, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v18.2.Core, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v18.2.Core, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v18.2.Core, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v18.2.Core, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.TreeMap.v18.2.Core, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v18.2.UI, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v18.2.UI, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v18.2.Wizard, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v18.2.Core, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v18.2.Presets, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v18.2.Win, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraLayout.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraMap.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeMap.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\KullaniciEkleme.cs" />
+    <Compile Include="Controller\Login.cs" />
+    <Compile Include="Controller\UrunSatinAlma.cs" />
+    <Compile Include="Controller\UrunSilme.cs" />
+    <Compile Include="Controller\Zimmet.cs" />
+    <Compile Include="Formlar\Atik_Listeleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Atik_Listeleme.Designer.cs">
+      <DependentUpon>Atik_Listeleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\RaporListeleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\RaporListeleme.Designer.cs">
+      <DependentUpon>RaporListeleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\YetkiliRaporListelemeecs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\YetkiliRaporListelemeecs.Designer.cs">
+      <DependentUpon>YetkiliRaporListelemeecs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\YetkiliZimmetUrun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\YetkiliZimmetUrun.Designer.cs">
+      <DependentUpon>YetkiliZimmetUrun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Yetkili_Zimmetler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Yetkili_Zimmetler.Designer.cs">
+      <DependentUpon>Yetkili_Zimmetler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Yetkili_Zimmet_Duzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Yetkili_Zimmet_Duzenle.Designer.cs">
+      <DependentUpon>Yetkili_Zimmet_Duzenle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Yetkili_Zimmet_Ekle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Yetkili_Zimmet_Ekle.Designer.cs">
+      <DependentUpon>Yetkili_Zimmet_Ekle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Zimmetler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Zimmetler.Designer.cs">
+      <DependentUpon>Zimmetler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\ZimmetUrun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\ZimmetUrun.Designer.cs">
+      <DependentUpon>ZimmetUrun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Zimmet_Duzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Zimmet_Duzenle.Designer.cs">
+      <DependentUpon>Zimmet_Duzenle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Zimmet_Ekleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Zimmet_Ekleme.Designer.cs">
+      <DependentUpon>Zimmet_Ekleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\atik.cs">
+      <DependentUpon>YazilimSinama.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\bolum.cs">
+      <DependentUpon>YazilimSinama.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Kullanicilar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Kullanicilar.Designer.cs">
+      <DependentUpon>Kullanicilar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Kullanıcı_Düzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Kullanıcı_Düzenle.Designer.cs">
+      <DependentUpon>Kullanıcı_Düzenle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Kullanıcı_Ekle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Kullanıcı_Ekle.Designer.cs">
+      <DependentUpon>Kullanıcı_Ekle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Satin_Alma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Satin_Alma.Designer.cs">
+      <DependentUpon>Satin_Alma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\UrunDuzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\UrunDuzenle.Designer.cs">
+      <DependentUpon>UrunDuzenle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Urunler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Urunler.Designer.cs">
+      <DependentUpon>Urunler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\kullanici.cs">
+      <DependentUpon>YazilimSinama.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\rapor.cs">
+      <DependentUpon>YazilimSinama.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sysdiagram.cs">
+      <DependentUpon>YazilimSinama.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\urunSatinAlma.cs">
+      <DependentUpon>YazilimSinama.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\YazilimSinama.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>YazilimSinama.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\YazilimSinama.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>YazilimSinama.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\YazilimSinama.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>YazilimSinama.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\zimmet.cs">
+      <DependentUpon>YazilimSinama.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin_Panel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Admin_Panel.Designer.cs">
+      <DependentUpon>Admin_Panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Satin_Alma_Sorumlusu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Satin_Alma_Sorumlusu.Designer.cs">
+      <DependentUpon>Satin_Alma_Sorumlusu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sisteme_Giris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Sisteme_Giris.Designer.cs">
+      <DependentUpon>Sisteme_Giris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Yetkili_Panel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Yetkili_Panel.Designer.cs">
+      <DependentUpon>Yetkili_Panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="yazilim_sinama_projesiDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>yazilim_sinama_projesiDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="yazilim_sinama_projesiDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>yazilim_sinama_projesiDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="yazilim_sinama_projesiDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>yazilim_sinama_projesiDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="yazilim_sinama_projesiDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>yazilim_sinama_projesiDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="yazilim_sinama_projesiDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>yazilim_sinama_projesiDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="yazilim_sinama_projesiDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>yazilim_sinama_projesiDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="yazilim_sinama_projesiDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>yazilim_sinama_projesiDataSet6.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Formlar\Atik_Listeleme.resx">
+      <DependentUpon>Atik_Listeleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Kullanicilar.resx">
+      <DependentUpon>Kullanicilar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Kullanıcı_Düzenle.resx">
+      <DependentUpon>Kullanıcı_Düzenle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Kullanıcı_Ekle.resx">
+      <DependentUpon>Kullanıcı_Ekle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\RaporListeleme.resx">
+      <DependentUpon>RaporListeleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Satin_Alma.resx">
+      <DependentUpon>Satin_Alma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\UrunDuzenle.resx">
+      <DependentUpon>UrunDuzenle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Urunler.resx">
+      <DependentUpon>Urunler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\YetkiliRaporListelemeecs.resx">
+      <DependentUpon>YetkiliRaporListelemeecs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\YetkiliZimmetUrun.resx">
+      <DependentUpon>YetkiliZimmetUrun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Yetkili_Zimmetler.resx">
+      <DependentUpon>Yetkili_Zimmetler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Yetkili_Zimmet_Duzenle.resx">
+      <DependentUpon>Yetkili_Zimmet_Duzenle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Yetkili_Zimmet_Ekle.resx">
+      <DependentUpon>Yetkili_Zimmet_Ekle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Zimmetler.resx">
+      <DependentUpon>Zimmetler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\ZimmetUrun.resx">
+      <DependentUpon>ZimmetUrun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Zimmet_Duzenle.resx">
+      <DependentUpon>Zimmet_Duzenle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Zimmet_Ekleme.resx">
+      <DependentUpon>Zimmet_Ekleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="View\Admin_Panel.resx">
+      <DependentUpon>Admin_Panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\Satin_Alma_Sorumlusu.resx">
+      <DependentUpon>Satin_Alma_Sorumlusu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Sisteme_Giris.resx">
+      <DependentUpon>Sisteme_Giris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Yetkili_Panel.resx">
+      <DependentUpon>Yetkili_Panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model\YazilimSinama.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>YazilimSinama.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\YazilimSinama.edmx.diagram">
+      <DependentUpon>YazilimSinama.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="yazilim_sinama_projesiDataSet.xsc">
+      <DependentUpon>yazilim_sinama_projesiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="yazilim_sinama_projesiDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>yazilim_sinama_projesiDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="yazilim_sinama_projesiDataSet.xss">
+      <DependentUpon>yazilim_sinama_projesiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="yazilim_sinama_projesiDataSet1.xsc">
+      <DependentUpon>yazilim_sinama_projesiDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="yazilim_sinama_projesiDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>yazilim_sinama_projesiDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="yazilim_sinama_projesiDataSet1.xss">
+      <DependentUpon>yazilim_sinama_projesiDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="yazilim_sinama_projesiDataSet2.xsc">
+      <DependentUpon>yazilim_sinama_projesiDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="yazilim_sinama_projesiDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>yazilim_sinama_projesiDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="yazilim_sinama_projesiDataSet2.xss">
+      <DependentUpon>yazilim_sinama_projesiDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="yazilim_sinama_projesiDataSet3.xsc">
+      <DependentUpon>yazilim_sinama_projesiDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="yazilim_sinama_projesiDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>yazilim_sinama_projesiDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="yazilim_sinama_projesiDataSet3.xss">
+      <DependentUpon>yazilim_sinama_projesiDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="yazilim_sinama_projesiDataSet4.xsc">
+      <DependentUpon>yazilim_sinama_projesiDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="yazilim_sinama_projesiDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>yazilim_sinama_projesiDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="yazilim_sinama_projesiDataSet4.xss">
+      <DependentUpon>yazilim_sinama_projesiDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="yazilim_sinama_projesiDataSet5.xsc">
+      <DependentUpon>yazilim_sinama_projesiDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="yazilim_sinama_projesiDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>yazilim_sinama_projesiDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="yazilim_sinama_projesiDataSet5.xss">
+      <DependentUpon>yazilim_sinama_projesiDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="yazilim_sinama_projesiDataSet6.xsc">
+      <DependentUpon>yazilim_sinama_projesiDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="yazilim_sinama_projesiDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>yazilim_sinama_projesiDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="yazilim_sinama_projesiDataSet6.xss">
+      <DependentUpon>yazilim_sinama_projesiDataSet6.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Model\YazilimSinama.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>YazilimSinama.edmx</DependentUpon>
+      <LastGenOutput>YazilimSinama.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\YazilimSinama.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>YazilimSinama.edmx</DependentUpon>
+      <LastGenOutput>YazilimSinama.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
